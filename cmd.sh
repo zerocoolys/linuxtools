@@ -22,7 +22,12 @@ case  $1  in
 			ssh root@${ALL_HOSTS[$i-1]} "cat /root/.ssh/id_rsa.pub  >> /root/.ssh/authorized_keys"
 		done
 		;;
-
+	cmd)
+		count=${#ALL_HOSTS[@]}
+		for i in `seq 1 $count`
+		do
+		#	ssh root@${ALL_HOSTS[$i-1]} 
+		done
         *)
                 echo $ Usage: {mongo1|mongo2|web1|web2} 
                 exit 1

@@ -3,7 +3,7 @@
 case  $1  in
         mongo1)
                 ssh 10.173.0.40
-		echo 1QAZxsw2
+		#echo 1QAZxsw2
                 ;;
         mongo2)
                 ssh 10.162.211.112
