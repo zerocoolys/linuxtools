@@ -1,8 +1,8 @@
 #!/bin/bash
 
-ALL_HOSTS=(10.173.0.40 10.162.211.112 10.172.252.1 10.172.255.76)
+#ALL_HOSTS=(10.173.0.40 10.162.211.112 10.172.252.1 10.172.255.76)
 
-
+. hosts.sh
 
 case  $1  in
         ssh)
@@ -22,12 +22,13 @@ case  $1  in
 			ssh root@${ALL_HOSTS[$i-1]} "cat /root/.ssh/id_rsa.pub  >> /root/.ssh/authorized_keys"
 		done
 		;;
-	cmd)
-		count=${#ALL_HOSTS[@]}
+	webcmd)
+		count=${#WEB_HOSTS[@]}
 		for i in `seq 1 $count`
 		do
-		#	ssh root@${ALL_HOSTS[$i-1]} 
+			ssh root@${WEB_HOSTS[$i-1]} "$2" 
 		done
+		;;
         *)
                 echo $ Usage: {mongo1|mongo2|web1|web2} 
                 exit 1

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ALL_HOSTS=(10.173.0.40 10.162.211.112 10.172.252.1 10.172.255.76)
+
+WEB_HOSTS=(10.172.252.1 10.172.255.76)
+ 
+TOMCAT_DIR=/var/production/apache-tomcat-7.0.55/
+WEBAPPS_DIR=$TOMCAT_DIR/webapps/
